@@ -390,9 +390,4 @@ export const contactInfo = {
   plannerName: "Amara Events Co.",
   plannerContact: "planner@bankeandabel.com",
   phone: "+234 801 234 5678",
-  social: [
-    { label: "Instagram", href: "https://instagram.com" },
-    { label: "Facebook", href: "https://facebook.com" },
-    { label: "X", href: "https://x.com" },
-  ],
 };

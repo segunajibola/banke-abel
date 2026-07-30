@@ -16,22 +16,9 @@ export function Footer() {
           {couple.weddingDateDisplay}
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-3">
-          {contactInfo.social.map((social) => (
-            <a
-              key={social.label}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-[color:var(--border-soft)] px-4 py-1.5 font-sans text-xs uppercase tracking-wide text-[color:var(--ink-muted)] transition-colors hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
-            >
-              {social.label}
-            </a>
-          ))}
-        </div>
-
         <p className="max-w-md font-sans text-sm text-[color:var(--ink-muted)]">
-          Thank you for being part of our story and for celebrating this next chapter with us.
+          Thank you for being part of our story and for celebrating this next
+          chapter with us.
         </p>
 
         <button
