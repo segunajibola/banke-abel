@@ -1,9 +1,9 @@
 import type {
   AccommodationInfo,
+  BankAccountInfo,
   FaqItem,
   GalleryImage,
   LoveStoryEvent,
-  RegistryLink,
   ScheduleItem,
   VenueDetail,
   WeddingColor,
@@ -201,7 +201,8 @@ export const accommodation: AccommodationInfo = {
     },
     {
       name: "Starjen International Hotel",
-      distance: "Km 21 Lagos-Badagry Expressway, Doyin bus stop, Okokomaiko — 15 min from venue",
+      distance:
+        "Km 21 Lagos-Badagry Expressway, Doyin bus stop, Okokomaiko — 15 min from venue",
       priceRange: "$$",
     },
     {
@@ -329,31 +330,34 @@ export const groomParty: WeddingPartyMember[] = [
 
 export const schedule: ScheduleItem[] = [
   {
-    time: "2:00 PM",
+    time: "12:00 PM",
     title: "Guests Arrive",
-    description: "Please be seated by 2:45 PM",
+    description: "Please be seated by 12:30 PM",
   },
-  { time: "2:30 PM", title: "Ceremony Begins" },
+  { time: "1:00 PM", title: "Ceremony Begins" },
   {
-    time: "3:30 PM",
+    time: "3:00 PM",
     title: "Photography",
     description: "Family and wedding party portraits",
   },
-  { time: "5:00 PM", title: "Reception", description: "Cocktail hour begins" },
-  { time: "7:00 PM", title: "Dinner" },
   {
-    time: "8:00 PM",
+    time: "2:30 PM",
+    title: "Reception",
+    description: "The cocktail hour begins",
+  },
+  {
+    time: "4:00 PM",
     title: "Dance",
     description: "First dance followed by open floor",
   },
-  { time: "10:30 PM", title: "Farewell" },
+  { time: "5:30 PM", title: "Farewell, but party continues" },
 ];
 
 export const faqs: FaqItem[] = [
   {
     question: "What is the dress code?",
     answer:
-      "Formal attire is requested. We'd love to see our wedding color — white — represented, though it is not required.",
+      "We'd love to see our wedding color — white — represented, though it is not required. Come as you feel most comfortable, and please dress for the weather.",
   },
   {
     question: "Can I bring a plus one?",
@@ -367,45 +371,24 @@ export const faqs: FaqItem[] = [
   },
   {
     question: "Are children invited?",
-    answer:
-      "We love your little ones, but our celebration is an adults-only affair, with the exception of our wedding party's children. We appreciate you arranging childcare for the evening.",
+    answer: "We love to see your little ones, please come with them.",
   },
   {
     question: "What time should I arrive?",
     answer:
-      "Please arrive by 2:45 PM to be seated before the ceremony begins at 3:00 PM. Given Lagos traffic, we recommend leaving with plenty of buffer time.",
+      "Please arrive by 12:00 PM to be seated before the ceremony begins at 1:00 PM. Given Lagos traffic, we recommend leaving with plenty of buffer time.",
   },
 ];
 
-export const registryLinks: RegistryLink[] = [
-  {
-    label: "Amazon Registry",
-    description: "Browse our curated list of home essentials",
-    href: "https://www.amazon.com/wedding/registry",
-  },
-  {
-    label: "Cash Gift",
-    description: "Contribute directly via bank transfer or mobile money",
-    href: "#contact",
-  },
-  {
-    label: "Honeymoon Fund",
-    description: "Help us create memories on our first trip as newlyweds",
-    href: "#contact",
-  },
-  {
-    label: "House Fund",
-    description: "Support us as we build our first home together",
-    href: "#contact",
-  },
-];
+export const giftAccount: BankAccountInfo = {
+  bankName: "OPAY",
+  accountNumber: "9124951952",
+  accountName: "Abel Opeyemi Thomas",
+};
 
 export const contactInfo = {
   plannerName: "Amara Events Co.",
   plannerContact: "planner@bankeandabel.com",
-  brideContact: "banke@bankeandabel.com",
-  groomContact: "abel@bankeandabel.com",
-  email: "hello@bankeandabel.com",
   phone: "+234 801 234 5678",
   social: [
     { label: "Instagram", href: "https://instagram.com" },

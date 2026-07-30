@@ -59,10 +59,10 @@ export interface FaqItem {
   answer: string;
 }
 
-export interface RegistryLink {
-  label: string;
-  description: string;
-  href: string;
+export interface BankAccountInfo {
+  bankName: string;
+  accountNumber: string;
+  accountName: string;
 }
 
 export interface RsvpFormData {
