@@ -33,24 +33,15 @@ export function Contact() {
             >
               {contactInfo.plannerContact}
             </a>
+            <a
+              href={`mailto:${contactInfo.plannerContact}`}
+              className="font-sans text-sm text-[color:var(--gold)] hover:underline"
+            >
+              {contactInfo.phone}
+            </a>
           </Card>
         </Reveal>
       </StaggerGroup>
-
-      <Reveal
-        delay={0.3}
-        className="mx-auto mt-10 flex max-w-md flex-col items-center gap-3 text-center"
-      >
-        <div className="flex items-center gap-2 font-sans text-sm text-[color:var(--ink-muted)]">
-          <Phone size={16} className="text-[color:var(--gold)]" />
-          <a
-            href={`tel:${contactInfo.phone}`}
-            className="hover:text-[color:var(--gold)]"
-          >
-            {contactInfo.phone}
-          </a>
-        </div>
-      </Reveal>
     </Section>
   );
 }
