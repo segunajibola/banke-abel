@@ -45,7 +45,7 @@ export interface WeddingPartyMember {
   name: string;
   role: string;
   message?: string;
-  image: string;
+  image?: string;
 }
 
 export interface ScheduleItem {

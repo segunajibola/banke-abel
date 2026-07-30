@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fbf7f0;
+  --background: #ffffff;
   --surface: #ffffff;
   --surface-glass: rgba(255, 255, 255, 0.55);
   --ink: #2b2420;

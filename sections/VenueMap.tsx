@@ -1,7 +1,7 @@
 "use client";
 
 import { Landmark, MapPin, Navigation, ParkingSquare } from "lucide-react";
-import { reception } from "@/lib/data";
+import { ceremony } from "@/lib/data";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
@@ -9,7 +9,7 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 
 export function VenueMap() {
-  const embedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(reception.address)}&output=embed`;
+  const embedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(ceremony.address)}&output=embed`;
 
   return (
     <Section id="venue">
@@ -39,14 +39,14 @@ export function VenueMap() {
               <MapPin size={20} className="mt-0.5 shrink-0 text-[color:var(--gold)]" />
               <div>
                 <p className="font-sans text-xs uppercase tracking-wide text-[color:var(--ink-muted)]">Address</p>
-                <p className="font-sans text-sm text-[color:var(--ink)]">{reception.name}, {reception.address}</p>
+                <p className="font-sans text-sm text-[color:var(--ink)]">{ceremony.name}, {ceremony.address}</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <ParkingSquare size={20} className="mt-0.5 shrink-0 text-[color:var(--gold)]" />
               <div>
                 <p className="font-sans text-xs uppercase tracking-wide text-[color:var(--ink-muted)]">Parking</p>
-                <p className="font-sans text-sm text-[color:var(--ink)]">{reception.parking}</p>
+                <p className="font-sans text-sm text-[color:var(--ink)]">{ceremony.parking}</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -54,17 +54,17 @@ export function VenueMap() {
               <div>
                 <p className="font-sans text-xs uppercase tracking-wide text-[color:var(--ink-muted)]">Nearby Landmarks</p>
                 <p className="font-sans text-sm text-[color:var(--ink)]">
-                  Two minutes from Landmark Beach and the Civic Centre roundabout
+                  On the LASU campus, just off the Lagos-Badagry Expressway near the Iyana-Isashi bus stop
                 </p>
               </div>
             </div>
 
             <div className="mt-auto flex flex-col gap-3">
-              <Button href={reception.mapsUrl} target="_blank" rel="noopener noreferrer" className="w-full">
+              <Button href={ceremony.mapsUrl} target="_blank" rel="noopener noreferrer" className="w-full">
                 <Navigation size={16} /> Get Directions
               </Button>
               <Button
-                href={reception.mapsUrl}
+                href={ceremony.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="secondary"
