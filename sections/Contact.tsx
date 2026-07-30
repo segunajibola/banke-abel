@@ -42,15 +42,6 @@ export function Contact() {
         className="mx-auto mt-10 flex max-w-md flex-col items-center gap-3 text-center"
       >
         <div className="flex items-center gap-2 font-sans text-sm text-[color:var(--ink-muted)]">
-          <Mail size={16} className="text-[color:var(--gold)]" />
-          <a
-            href={`mailto:${contactInfo.email}`}
-            className="hover:text-[color:var(--gold)]"
-          >
-            {contactInfo.email}
-          </a>
-        </div>
-        <div className="flex items-center gap-2 font-sans text-sm text-[color:var(--ink-muted)]">
           <Phone size={16} className="text-[color:var(--gold)]" />
           <a
             href={`tel:${contactInfo.phone}`}
