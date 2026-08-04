@@ -1,7 +1,7 @@
 "use client";
 
-import { Church, MapPin, PartyPopper, Plane, Shirt } from "lucide-react";
-import { event, accommodation } from "@/lib/data";
+import { Church, MapPin, PartyPopper, Shirt } from "lucide-react";
+import { event } from "@/lib/data";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
@@ -30,9 +30,9 @@ export function WeddingDetails() {
         className="mb-16"
       />
 
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div className="grid gap-8">
         <Reveal>
-          <Card className="flex h-full flex-col gap-5">
+          <Card className="mx-auto flex h-full w-full max-w-xl flex-col gap-5">
             <Church size={28} className="text-[color:var(--gold)]" />
             <h3 className="font-serif text-2xl text-[color:var(--ink)]">{event.heading}</h3>
             <div className="flex flex-col gap-4">
@@ -45,30 +45,6 @@ export function WeddingDetails() {
             <Button href={event.mapsUrl} target="_blank" rel="noopener noreferrer" variant="secondary" className="mt-auto w-full">
               Open in Google Maps
             </Button>
-          </Card>
-        </Reveal>
-
-        <Reveal delay={0.1}>
-          <Card className="flex h-full flex-col gap-5">
-            <Plane size={28} className="text-[color:var(--gold)]" />
-            <h3 className="font-serif text-2xl text-[color:var(--ink)]">Accommodation</h3>
-            <div className="flex flex-col gap-3">
-              {accommodation.hotels.map((hotel) => (
-                <div key={hotel.name} className="flex items-center justify-between font-sans text-sm">
-                  <span className="text-[color:var(--ink)]">{hotel.name}</span>
-                  <span className="text-[color:var(--ink-muted)]">{hotel.distance}</span>
-                </div>
-              ))}
-            </div>
-            <p className="font-sans text-sm text-[color:var(--ink-muted)]">{accommodation.airportInfo}</p>
-            <ul className="flex flex-col gap-2 font-sans text-sm text-[color:var(--ink-muted)]">
-              {accommodation.travelTips.map((tip) => (
-                <li key={tip} className="flex gap-2">
-                  <span className="text-[color:var(--gold)]">&bull;</span>
-                  {tip}
-                </li>
-              ))}
-            </ul>
           </Card>
         </Reveal>
       </div>

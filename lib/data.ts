@@ -55,7 +55,7 @@ export const loveStory: LoveStoryEvent[] = [
   },
   {
     id: "wedding-day",
-    title: "Wedding Day",
+    title: "Wedding Reception",
     date: "September 26, 2026",
     description:
       "The day their forever officially begins — surrounded by the family and friends who have loved and supported them since the very beginning.",
@@ -194,6 +194,7 @@ export const bridalParty: WeddingPartyMember[] = [
   { id: "bm3", name: "Onyinye Olaitan", role: "Bride's Maid" },
   { id: "bm4", name: "Eleana Oweazim", role: "Bride's Maid" },
   { id: "bm5", name: "Sukanmi Ogunbode", role: "Bride's Maid" },
+  { id: "bm6", name: "Bisola Ogunbode", role: "Bride's Maid" },
 ];
 
 export const asoEbi: WeddingPartyMember[] = [
@@ -203,7 +204,6 @@ export const asoEbi: WeddingPartyMember[] = [
   { id: "ae4", name: "Ajovi Ighariemu", role: "Aso Ebi" },
   { id: "ae5", name: "Eniola Orogbo", role: "Aso Ebi" },
   { id: "ae6", name: "Funmi Olufisoye", role: "Aso Ebi" },
-  { id: "ae7", name: "Favor Oshadare", role: "Aso Ebi" },
   { id: "ae8", name: "Ayomide Tella", role: "Aso Ebi" },
 ];
 

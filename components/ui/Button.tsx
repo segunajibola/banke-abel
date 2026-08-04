@@ -26,7 +26,7 @@ type ButtonAsLink = BaseProps & { href: string; target?: string; rel?: string };
 export function Button(props: ButtonAsButton | ButtonAsLink) {
   const { variant = "primary", className, children } = props;
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-full px-8 py-3.5 font-sans text-sm font-medium tracking-wide transition-all duration-300 ease-out hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--gold)]",
+    "inline-flex items-center justify-center gap-2 rounded-full px-8 py-3.5 font-sans text-sm font-medium tracking-wide transition-all duration-300 ease-out hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--gold)] disabled:pointer-events-none disabled:opacity-60",
     variantStyles[variant],
     className,
   );

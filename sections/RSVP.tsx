@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import confetti from "canvas-confetti";
-import { CircleCheck } from "lucide-react";
+import { CircleCheck, LoaderCircle } from "lucide-react";
 import type { RsvpFormData } from "@/types";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -38,6 +38,8 @@ function fireConfetti() {
 export function RSVP() {
   const [form, setForm] = useState<RsvpFormData>(initialForm);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (field: keyof RsvpFormData) => (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
@@ -45,10 +47,30 @@ export function RSVP() {
     setForm((prev) => ({ ...prev, [field]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    fireConfetti();
+    setSubmitting(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/rsvp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        throw new Error(body?.error || "Something went wrong.");
+      }
+
+      setSubmitted(true);
+      fireConfetti();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -56,7 +78,7 @@ export function RSVP() {
       <SectionHeading
         eyebrow="RSVP"
         title="Join Our Celebration"
-        description="Kindly respond by November 1, 2026 so we can prepare a seat with your name on it."
+        description="Kindly respond by September 21, 2026 so we can prepare a seat with your name on it."
         className="mb-16"
       />
 
@@ -84,7 +106,13 @@ export function RSVP() {
                     ? "We can't wait to celebrate with you! A confirmation has been noted."
                     : "We're sorry you can't make it, but thank you for letting us know — you'll be in our hearts."}
                 </p>
-                <Button variant="secondary" onClick={() => { setSubmitted(false); setForm(initialForm); }}>
+                <Button
+                  variant="secondary"
+                  onClick={() => {
+                    setSubmitted(false);
+                    setForm(initialForm);
+                  }}
+                >
                   Submit Another Response
                 </Button>
               </motion.div>
@@ -130,8 +158,18 @@ export function RSVP() {
                   />
                 </FormField>
 
-                <Button type="submit" className="sm:col-span-2">
-                  Submit RSVP
+                {error && (
+                  <p className="font-sans text-sm text-red-500 sm:col-span-2">{error}</p>
+                )}
+
+                <Button type="submit" disabled={submitting} className="sm:col-span-2">
+                  {submitting ? (
+                    <>
+                      <LoaderCircle size={16} className="animate-spin" /> Submitting...
+                    </>
+                  ) : (
+                    "Submit RSVP"
+                  )}
                 </Button>
               </motion.form>
             )}
