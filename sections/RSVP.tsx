@@ -125,7 +125,10 @@ export function RSVP() {
                 onSubmit={handleSubmit}
                 className="grid gap-5 sm:grid-cols-2"
               >
-                <FormField label="Name" htmlFor="name" className="sm:col-span-2">
+                <p className="font-sans text-xs text-[color:var(--ink-muted)] sm:col-span-2">
+                  Fields marked <span className="text-[color:var(--gold)]">*</span> are required — everything else is optional.
+                </p>
+                <FormField label="Name" htmlFor="name" required className="sm:col-span-2">
                   <TextInput id="name" required value={form.name} onChange={handleChange("name")} />
                 </FormField>
                 <FormField label="Email" htmlFor="email">
@@ -134,7 +137,7 @@ export function RSVP() {
                 <FormField label="Phone" htmlFor="phone">
                   <TextInput id="phone" type="tel" value={form.phone} onChange={handleChange("phone")} />
                 </FormField>
-                <FormField label="Will you attend?" htmlFor="attending">
+                <FormField label="Will you attend?" htmlFor="attending" required>
                   <SelectInput id="attending" required value={form.attending} onChange={handleChange("attending")}>
                     <option value="" disabled>Select an option</option>
                     <option value="yes">Joyfully accepts</option>
@@ -142,11 +145,13 @@ export function RSVP() {
                   </SelectInput>
                 </FormField>
                 <FormField label="Number of Guests" htmlFor="guests">
-                  <SelectInput id="guests" value={form.guests} onChange={handleChange("guests")}>
-                    {[1, 2, 3, 4].map((n) => (
-                      <option key={n} value={n}>{n}</option>
-                    ))}
-                  </SelectInput>
+                  <TextInput
+                    id="guests"
+                    type="number"
+                    min={1}
+                    value={form.guests}
+                    onChange={handleChange("guests")}
+                  />
                 </FormField>
                 <FormField label="Message to the Couple" htmlFor="message" className="sm:col-span-2">
                   <TextArea
