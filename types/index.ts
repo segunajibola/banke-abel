@@ -85,12 +85,10 @@ export interface AboutEachOtherEntry {
 }
 
 export interface RsvpFormData {
-  firstName: string;
-  lastName: string;
+  name: string;
   email: string;
   phone: string;
   attending: "yes" | "no" | "";
   guests: string;
-  mealPreference: string;
   message: string;
 }

@@ -13,13 +13,11 @@ import { Button } from "@/components/ui/Button";
 import { FormField, SelectInput, TextArea, TextInput } from "@/components/ui/FormField";
 
 const initialForm: RsvpFormData = {
-  firstName: "",
-  lastName: "",
+  name: "",
   email: "",
   phone: "",
   attending: "",
   guests: "1",
-  mealPreference: "",
   message: "",
 };
 
@@ -80,7 +78,7 @@ export function RSVP() {
                 >
                   <CircleCheck size={56} className="text-[color:var(--gold)]" />
                 </motion.div>
-                <h3 className="font-serif text-3xl text-[color:var(--ink)]">Thank You, {form.firstName}!</h3>
+                <h3 className="font-serif text-3xl text-[color:var(--ink)]">Thank You, {form.name}!</h3>
                 <p className="max-w-md font-sans text-sm text-[color:var(--ink-muted)]">
                   {form.attending === "yes"
                     ? "We can't wait to celebrate with you! A confirmation has been noted."
@@ -99,14 +97,11 @@ export function RSVP() {
                 onSubmit={handleSubmit}
                 className="grid gap-5 sm:grid-cols-2"
               >
-                <FormField label="First Name" htmlFor="firstName">
-                  <TextInput id="firstName" required value={form.firstName} onChange={handleChange("firstName")} />
-                </FormField>
-                <FormField label="Last Name" htmlFor="lastName">
-                  <TextInput id="lastName" required value={form.lastName} onChange={handleChange("lastName")} />
+                <FormField label="Name" htmlFor="name" className="sm:col-span-2">
+                  <TextInput id="name" required value={form.name} onChange={handleChange("name")} />
                 </FormField>
                 <FormField label="Email" htmlFor="email">
-                  <TextInput id="email" type="email" required value={form.email} onChange={handleChange("email")} />
+                  <TextInput id="email" type="email" value={form.email} onChange={handleChange("email")} />
                 </FormField>
                 <FormField label="Phone" htmlFor="phone">
                   <TextInput id="phone" type="tel" value={form.phone} onChange={handleChange("phone")} />
@@ -123,19 +118,6 @@ export function RSVP() {
                     {[1, 2, 3, 4].map((n) => (
                       <option key={n} value={n}>{n}</option>
                     ))}
-                  </SelectInput>
-                </FormField>
-                <FormField label="Meal Preference" htmlFor="mealPreference" className="sm:col-span-2">
-                  <SelectInput
-                    id="mealPreference"
-                    value={form.mealPreference}
-                    onChange={handleChange("mealPreference")}
-                  >
-                    <option value="">Select a meal</option>
-                    <option value="chicken">Herb-Roasted Chicken</option>
-                    <option value="fish">Grilled Fish</option>
-                    <option value="vegetarian">Vegetarian</option>
-                    <option value="vegan">Vegan</option>
                   </SelectInput>
                 </FormField>
                 <FormField label="Message to the Couple" htmlFor="message" className="sm:col-span-2">

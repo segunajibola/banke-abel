@@ -133,10 +133,9 @@ export const event: VenueDetail = {
   date: "September 26, 2026",
   time: "11:00 AM",
   address: "Lagos State University (LASU), Badagry Expressway, Ojo, Lagos",
-  dressCode: "Formal — White attire encouraged",
+  dressCode: "White",
   parking: "Free on-campus parking available near the hall entrance",
-  mapsUrl:
-    "https://maps.google.com/?q=Femi+Gbajabiamila+Hall+Lagos+State+University+Ojo+Lagos",
+  mapsUrl: "https://maps.app.goo.gl/nmTcPUrABzcq2T1Z7",
 };
 
 export const accommodation: AccommodationInfo = {

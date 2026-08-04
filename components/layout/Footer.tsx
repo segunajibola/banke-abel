@@ -28,6 +28,18 @@ export function Footer() {
         >
           <ArrowUp size={18} />
         </button>
+
+        <p className="mt-4 font-sans text-xs text-[color:var(--ink-muted)]">
+          Page developed and designed by{" "}
+          <a
+            href="https://wa.me/2348105729893"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[color:var(--gold)] hover:underline"
+          >
+            Segun
+          </a>
+        </p>
       </Container>
     </footer>
   );
