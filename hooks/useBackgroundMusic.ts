@@ -1,26 +1,68 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
+
+let audioInstance: HTMLAudioElement | null = null;
+let currentSrc: string | null = null;
+let playingState = false;
+let hasAttemptedAutoplay = false;
+const listeners = new Set<(playing: boolean) => void>();
+
+function ensureAudio(src: string) {
+  if (!audioInstance || currentSrc !== src) {
+    audioInstance?.pause();
+    audioInstance = new Audio(src);
+    audioInstance.loop = true;
+    audioInstance.volume = 0.35;
+    currentSrc = src;
+  }
+  return audioInstance;
+}
+
+function notify(playing: boolean) {
+  playingState = playing;
+  listeners.forEach((listener) => listener(playing));
+}
+
+function play(src: string) {
+  if (playingState) return;
+  ensureAudio(src)
+    .play()
+    .then(() => notify(true))
+    .catch(() => undefined);
+}
+
+function pause() {
+  audioInstance?.pause();
+  notify(false);
+}
 
 export function useBackgroundMusic(src: string) {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(playingState);
+
+  useEffect(() => {
+    setIsPlaying(playingState);
+    listeners.add(setIsPlaying);
+    return () => {
+      listeners.delete(setIsPlaying);
+    };
+  }, []);
 
   const toggle = () => {
-    if (!audioRef.current) {
-      audioRef.current = new Audio(src);
-      audioRef.current.loop = true;
-      audioRef.current.volume = 0.35;
-    }
-
-    if (isPlaying) {
-      audioRef.current.pause();
-      setIsPlaying(false);
+    if (playingState) {
+      pause();
     } else {
-      audioRef.current.play().catch(() => undefined);
-      setIsPlaying(true);
+      play(src);
     }
   };
 
-  return { isPlaying, toggle };
+  // Only ever attempts once across the whole app lifetime, so revisiting a
+  // page that autoplays doesn't stop music already playing from another page.
+  const attemptAutoplay = () => {
+    if (hasAttemptedAutoplay) return;
+    hasAttemptedAutoplay = true;
+    play(src);
+  };
+
+  return { isPlaying, toggle, attemptAutoplay };
 }

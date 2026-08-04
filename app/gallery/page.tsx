@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
@@ -14,15 +14,12 @@ import { GiftRegistry } from "@/sections/GiftRegistry";
 import { ThankYou } from "@/sections/ThankYou";
 
 export default function GalleryPage() {
-  const { isPlaying, toggle } = useBackgroundMusic("/music/chike-apple.mp3");
-  const hasAttemptedAutoplay = useRef(false);
+  const { isPlaying, toggle, attemptAutoplay } = useBackgroundMusic("/music/chike-apple.mp3");
 
   useEffect(() => {
-    if (hasAttemptedAutoplay.current) return;
-    hasAttemptedAutoplay.current = true;
     // Browsers may block this until the visitor interacts with the page —
     // the Navbar speaker icon remains available as a manual fallback.
-    toggle();
+    attemptAutoplay();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
