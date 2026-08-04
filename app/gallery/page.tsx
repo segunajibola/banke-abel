@@ -14,7 +14,7 @@ import { GiftRegistry } from "@/sections/GiftRegistry";
 import { ThankYou } from "@/sections/ThankYou";
 
 export default function GalleryPage() {
-  const { isPlaying, toggle } = useBackgroundMusic("/audio/apple-by-chike.mp3");
+  const { isPlaying, toggle } = useBackgroundMusic("/music/chike-apple.mp3");
   const hasAttemptedAutoplay = useRef(false);
 
   useEffect(() => {

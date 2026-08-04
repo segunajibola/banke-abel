@@ -17,7 +17,7 @@ import { Appreciation } from "@/sections/Appreciation";
 import { FAQ } from "@/sections/FAQ";
 
 export default function DetailsPage() {
-  const { isPlaying, toggle } = useBackgroundMusic("/audio/apple-by-chike.mp3");
+  const { isPlaying, toggle } = useBackgroundMusic("/music/chike-apple.mp3");
 
   return (
     <>
