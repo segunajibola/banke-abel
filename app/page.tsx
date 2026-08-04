@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Download } from "lucide-react";
 import { couple } from "@/lib/data";
 import { Button } from "@/components/ui/Button";
 import { CountdownDisplay } from "@/components/ui/CountdownDisplay";
@@ -46,6 +47,28 @@ export default function Landing() {
           <Button variant="outline-light" href="/details#rsvp">
             RSVP
           </Button>
+        </div>
+
+        <div className="mt-2 flex flex-col items-center gap-2">
+          <span className="font-sans text-xs uppercase tracking-[0.25em] text-white/60">
+            Download Invitation
+          </span>
+          <div className="flex items-center gap-5">
+            <a
+              href="/invitation/image"
+              download
+              className="inline-flex items-center gap-1.5 font-sans text-sm text-white/85 transition-colors hover:text-white"
+            >
+              <Download size={14} /> Image
+            </a>
+            <a
+              href="/invitation/pdf"
+              download
+              className="inline-flex items-center gap-1.5 font-sans text-sm text-white/85 transition-colors hover:text-white"
+            >
+              <Download size={14} /> PDF
+            </a>
+          </div>
         </div>
       </div>
     </main>
