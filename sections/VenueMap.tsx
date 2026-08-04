@@ -1,7 +1,7 @@
 "use client";
 
 import { Landmark, MapPin, Navigation, ParkingSquare } from "lucide-react";
-import { ceremony } from "@/lib/data";
+import { event } from "@/lib/data";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
@@ -9,7 +9,7 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 
 export function VenueMap() {
-  const embedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(ceremony.address)}&output=embed`;
+  const embedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(event.address)}&output=embed`;
 
   return (
     <Section id="venue">
@@ -39,14 +39,14 @@ export function VenueMap() {
               <MapPin size={20} className="mt-0.5 shrink-0 text-[color:var(--gold)]" />
               <div>
                 <p className="font-sans text-xs uppercase tracking-wide text-[color:var(--ink-muted)]">Address</p>
-                <p className="font-sans text-sm text-[color:var(--ink)]">{ceremony.name}, {ceremony.address}</p>
+                <p className="font-sans text-sm text-[color:var(--ink)]">{event.name}, {event.address}</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <ParkingSquare size={20} className="mt-0.5 shrink-0 text-[color:var(--gold)]" />
               <div>
                 <p className="font-sans text-xs uppercase tracking-wide text-[color:var(--ink-muted)]">Parking</p>
-                <p className="font-sans text-sm text-[color:var(--ink)]">{ceremony.parking}</p>
+                <p className="font-sans text-sm text-[color:var(--ink)]">{event.parking}</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -60,11 +60,11 @@ export function VenueMap() {
             </div>
 
             <div className="mt-auto flex flex-col gap-3">
-              <Button href={ceremony.mapsUrl} target="_blank" rel="noopener noreferrer" className="w-full">
+              <Button href={event.mapsUrl} target="_blank" rel="noopener noreferrer" className="w-full">
                 <Navigation size={16} /> Get Directions
               </Button>
               <Button
-                href={ceremony.mapsUrl}
+                href={event.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="secondary"

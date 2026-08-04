@@ -6,7 +6,7 @@ export interface LoveStoryEvent {
   image: string;
 }
 
-export type GalleryCategory = "Engagement" | "Travel" | "Proposal" | "Family";
+export type GalleryCategory = "Candid" | "Traditional" | "Proposal";
 
 export interface GalleryImage {
   id: string;
@@ -63,6 +63,25 @@ export interface BankAccountInfo {
   bankName: string;
   accountNumber: string;
   accountName: string;
+}
+
+export interface ZoomMeetingInfo {
+  link?: string;
+  meetingId?: string;
+  passcode?: string;
+  note: string;
+}
+
+export interface PhotoOrderItem {
+  order: number;
+  title: string;
+  description?: string;
+}
+
+export interface AboutEachOtherEntry {
+  from: string;
+  about: string;
+  text: string;
 }
 
 export interface RsvpFormData {

@@ -1,8 +1,7 @@
 "use client";
 
 import { ArrowUp } from "lucide-react";
-import { couple, contactInfo } from "@/lib/data";
-import { scrollToId } from "@/lib/utils";
+import { couple } from "@/lib/data";
 import { Container } from "@/components/ui/Container";
 
 export function Footer() {
@@ -23,7 +22,7 @@ export function Footer() {
 
         <button
           type="button"
-          onClick={() => scrollToId("#home")}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           aria-label="Back to top"
           className="mt-2 flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--border-soft)] text-[color:var(--ink)] transition-colors hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
         >

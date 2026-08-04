@@ -88,15 +88,15 @@ export function Hero() {
           className="flex flex-col gap-4 sm:flex-row"
         >
           <Button onClick={() => scrollToId("#rsvp")}>RSVP Now</Button>
-          <Button variant="outline-light" onClick={() => scrollToId("#details")}>
-            View Details
+          <Button variant="outline-light" href="/gallery">
+            Gallery &amp; Our Story
           </Button>
         </motion.div>
       </motion.div>
 
       <motion.button
         type="button"
-        onClick={() => scrollToId("#our-story")}
+        onClick={() => scrollToId("#details")}
         aria-label="Scroll to next section"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}

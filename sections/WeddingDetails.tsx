@@ -1,7 +1,7 @@
 "use client";
 
 import { Church, MapPin, PartyPopper, Plane, Shirt } from "lucide-react";
-import { ceremony, reception, accommodation } from "@/lib/data";
+import { event, accommodation } from "@/lib/data";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
@@ -30,39 +30,25 @@ export function WeddingDetails() {
         className="mb-16"
       />
 
-      <div className="grid gap-8 lg:grid-cols-3">
+      <div className="grid gap-8 lg:grid-cols-2">
         <Reveal>
           <Card className="flex h-full flex-col gap-5">
             <Church size={28} className="text-[color:var(--gold)]" />
-            <h3 className="font-serif text-2xl text-[color:var(--ink)]">{ceremony.heading}</h3>
+            <h3 className="font-serif text-2xl text-[color:var(--ink)]">{event.heading}</h3>
             <div className="flex flex-col gap-4">
-              <DetailRow icon={MapPin} label="Venue" value={ceremony.name} />
-              <DetailRow icon={PartyPopper} label="Date &amp; Time" value={`${ceremony.date} at ${ceremony.time}`} />
-              <DetailRow icon={Shirt} label="Dress Code" value={ceremony.dressCode ?? ""} />
+              <DetailRow icon={MapPin} label="Venue" value={event.name} />
+              <DetailRow icon={PartyPopper} label="Date &amp; Time" value={`${event.date} at ${event.time}`} />
+              <DetailRow icon={MapPin} label="Address" value={event.address} />
+              <DetailRow icon={Shirt} label="Dress Code" value={event.dressCode ?? ""} />
+              <DetailRow icon={MapPin} label="Parking" value={event.parking ?? ""} />
             </div>
-            <Button href={ceremony.mapsUrl} target="_blank" rel="noopener noreferrer" variant="secondary" className="mt-auto w-full">
+            <Button href={event.mapsUrl} target="_blank" rel="noopener noreferrer" variant="secondary" className="mt-auto w-full">
               Open in Google Maps
             </Button>
           </Card>
         </Reveal>
 
         <Reveal delay={0.1}>
-          <Card className="flex h-full flex-col gap-5">
-            <PartyPopper size={28} className="text-[color:var(--gold)]" />
-            <h3 className="font-serif text-2xl text-[color:var(--ink)]">{reception.heading}</h3>
-            <div className="flex flex-col gap-4">
-              <DetailRow icon={MapPin} label="Venue" value={reception.name} />
-              <DetailRow icon={PartyPopper} label="Time" value={reception.time} />
-              <DetailRow icon={MapPin} label="Address" value={reception.address} />
-              <DetailRow icon={MapPin} label="Parking" value={reception.parking ?? ""} />
-            </div>
-            <Button href={reception.mapsUrl} target="_blank" rel="noopener noreferrer" variant="secondary" className="mt-auto w-full">
-              Get Directions
-            </Button>
-          </Card>
-        </Reveal>
-
-        <Reveal delay={0.2}>
           <Card className="flex h-full flex-col gap-5">
             <Plane size={28} className="text-[color:var(--gold)]" />
             <h3 className="font-serif text-2xl text-[color:var(--ink)]">Accommodation</h3>

@@ -1,0 +1,20 @@
+
+> banke-abel@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.12 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.186:3000
+✓ Ready in 1739ms
+
+⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+ GET / 200 in 2.7s (next.js: 2.2s, application-code: 548ms)
+ GET / 200 in 377ms (next.js: 29ms, application-code: 348ms)
+ GET / 200 in 127ms (next.js: 10ms, application-code: 117ms)
+ GET /details 200 in 3.1s (next.js: 2.5s, application-code: 582ms)
+⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+ GET /gallery 200 in 3.0s (next.js: 2.6s, application-code: 410ms)
+ GET /details 200 in 196ms (next.js: 26ms, application-code: 170ms)
+ GET /gallery 200 in 283ms (next.js: 10ms, application-code: 273ms)
+ GET /details 200 in 189ms (next.js: 9ms, application-code: 180ms)
+[?25h

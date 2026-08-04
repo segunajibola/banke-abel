@@ -1,8 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { MessageCircle, PartyPopper } from "lucide-react";
-import { scrollToId } from "@/lib/utils";
+
+const MotionLink = motion.create(Link);
 
 export function FloatingButtons() {
   return (
@@ -21,9 +23,8 @@ export function FloatingButtons() {
         <MessageCircle size={22} />
       </motion.a>
 
-      <motion.button
-        type="button"
-        onClick={() => scrollToId("#rsvp")}
+      <MotionLink
+        href="/details#rsvp"
         aria-label="Jump to RSVP form"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -32,7 +33,7 @@ export function FloatingButtons() {
         className="flex h-13 w-13 items-center justify-center rounded-full bg-[color:var(--gold)] p-3.5 text-white shadow-[0_10px_30px_-10px_rgba(182,137,63,0.7)]"
       >
         <PartyPopper size={22} />
-      </motion.button>
+      </MotionLink>
     </div>
   );
 }

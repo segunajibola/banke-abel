@@ -13,10 +13,9 @@ import { cn } from "@/lib/utils";
 
 const categories: (GalleryCategory | "All")[] = [
   "All",
-  "Engagement",
-  "Travel",
+  "Candid",
+  "Traditional",
   "Proposal",
-  "Family",
 ];
 
 export function Gallery() {

@@ -1,187 +1,138 @@
 import type {
+  AboutEachOtherEntry,
   AccommodationInfo,
   BankAccountInfo,
   FaqItem,
   GalleryImage,
   LoveStoryEvent,
+  PhotoOrderItem,
   ScheduleItem,
   VenueDetail,
   WeddingColor,
   WeddingPartyMember,
+  ZoomMeetingInfo,
 } from "@/types";
 
 export const couple = {
   brideName: "Banke",
   groomName: "Abel",
-  monogram: "B & A",
-  weddingDateISO: "2026-09-25T00:00:00",
-  weddingDateDisplay: "September 25, 2026",
+  brideFullName: "Adebanke Abigail Olatunde",
+  groomFullName: "Abel Opeyemi Thomas",
+  hashtag: "#LoveBOAT26",
+  weddingDateISO: "2026-09-26T11:00:00",
+  weddingDateDisplay: "September 26, 2026",
   tagline: "Our Forever Begins",
-  heroImage: "https://picsum.photos/seed/bankeabel-hero/1920/1080",
+  heroImage: "/images/couple-hero.jpeg",
 };
 
 export const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Our Story", href: "#our-story" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Wedding Details", href: "#details" },
-  { label: "Wedding Party", href: "#wedding-party" },
-  { label: "RSVP", href: "#rsvp" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Details", href: "/details" },
+  { label: "RSVP", href: "/details#rsvp" },
+  { label: "Gallery", href: "/gallery#gallery" },
+  { label: "Our Story", href: "/gallery#our-story" },
+  { label: "Wedding Party", href: "/gallery#wedding-party" },
+  { label: "FAQ", href: "/details#faq" },
 ];
 
 export const loveStory: LoveStoryEvent[] = [
-  {
-    id: "first-meeting",
-    title: "First Meeting",
-    date: "June 2019",
-    description:
-      "Banke and Abel met on a rainy Lagos afternoon at a mutual friend's birthday lunch. What began as small talk over jollof rice turned into hours of conversation neither of them wanted to end.",
-    image: "https://picsum.photos/seed/bankeabel-meeting/800/1000",
-  },
   {
     id: "first-date",
     title: "First Date",
     date: "August 2019",
     description:
-      "Their first official date was a quiet evening at a rooftop restaurant overlooking the city lights. Abel was so nervous he arrived thirty minutes early — Banke still teases him about it.",
-    image: "https://picsum.photos/seed/bankeabel-date/800/1000",
+      "Their first official date was a quiet evening spent talking for hours. Abel was so nervous he arrived thirty minutes early — Banke still teases him about it.",
+    image: "/images/couple-candid-1.jpeg",
   },
   {
     id: "engagement",
     title: "Engagement",
     date: "March 2025",
     description:
-      "On a golden-hour beach walk, Abel got down on one knee. Banke said yes before he even finished the question, and the waves became the first witnesses to their promise.",
-    image: "https://picsum.photos/seed/bankeabel-engagement/800/1000",
+      "Abel got down on one knee, and Banke said yes before he even finished the question. Friends and family gathered to celebrate the promise of forever.",
+    image: "/images/couple-proposal.jpeg",
   },
   {
     id: "wedding-day",
     title: "Wedding Day",
-    date: "December 12, 2026",
+    date: "September 26, 2026",
     description:
       "The day their forever officially begins — surrounded by the family and friends who have loved and supported them since the very beginning.",
-    image: "https://picsum.photos/seed/bankeabel-wedding/800/1000",
+    image: "/images/wedding-welcome-card.jpeg",
+  },
+];
+
+export const aboutEachOther: AboutEachOtherEntry[] = [
+  {
+    from: "Abel",
+    about: "Banke",
+    text: "What I love most about Banke is her warmth — the way she makes everyone around her feel seen. She is my calm, my best friend, and my favorite person to build a life with.",
+  },
+  {
+    from: "Banke",
+    about: "Abel",
+    text: "Abel's steadiness and quiet strength are what I fell in love with. He listens, he shows up, and he makes even the ordinary days feel worth celebrating.",
   },
 ];
 
 export const galleryImages: GalleryImage[] = [
   {
     id: "g1",
-    src: "https://picsum.photos/seed/bankeabel-g1/800/1000",
-    alt: "Engagement portrait of Banke and Abel",
-    category: "Engagement",
-    width: 800,
-    height: 1000,
+    src: "/images/couple-hero.jpeg",
+    alt: "Banke and Abel smiling together",
+    category: "Candid",
+    width: 1500,
+    height: 2000,
   },
   {
     id: "g2",
-    src: "https://picsum.photos/seed/bankeabel-g2/900/700",
-    alt: "Banke and Abel laughing together",
-    category: "Engagement",
-    width: 900,
-    height: 700,
+    src: "/images/couple-candid-1.jpeg",
+    alt: "A candid moment between Banke and Abel",
+    category: "Candid",
+    width: 1500,
+    height: 2000,
   },
   {
     id: "g3",
-    src: "https://picsum.photos/seed/bankeabel-g3/800/1100",
-    alt: "Banke and Abel on a trip to Zanzibar",
-    category: "Travel",
-    width: 800,
-    height: 1100,
+    src: "/images/couple-traditional-1.jpeg",
+    alt: "Banke and Abel dressed up together",
+    category: "Traditional",
+    width: 810,
+    height: 1080,
   },
   {
     id: "g4",
-    src: "https://picsum.photos/seed/bankeabel-g4/900/650",
-    alt: "Sunset over the water during travels",
-    category: "Travel",
-    width: 900,
-    height: 650,
+    src: "/images/couple-traditional-2.jpeg",
+    alt: "Banke and Abel in ankara outfits",
+    category: "Traditional",
+    width: 750,
+    height: 1000,
   },
   {
     id: "g5",
-    src: "https://picsum.photos/seed/bankeabel-g5/800/1000",
-    alt: "The proposal moment on the beach",
-    category: "Proposal",
-    width: 800,
+    src: "/images/couple-traditional-3.jpeg",
+    alt: "Banke and Abel in traditional attire",
+    category: "Traditional",
+    width: 756,
     height: 1000,
   },
   {
     id: "g6",
-    src: "https://picsum.photos/seed/bankeabel-g6/900/900",
-    alt: "Close up of the engagement ring",
+    src: "/images/couple-proposal.jpeg",
+    alt: "The proposal moment, with 'Marry' balloons in the background",
     category: "Proposal",
-    width: 900,
-    height: 900,
-  },
-  {
-    id: "g7",
-    src: "https://picsum.photos/seed/bankeabel-g7/800/1050",
-    alt: "Family gathering celebrating the couple",
-    category: "Family",
-    width: 800,
-    height: 1050,
-  },
-  {
-    id: "g8",
-    src: "https://picsum.photos/seed/bankeabel-g8/900/700",
-    alt: "Both families meeting for the first time",
-    category: "Family",
-    width: 900,
-    height: 700,
-  },
-  {
-    id: "g9",
-    src: "https://picsum.photos/seed/bankeabel-g9/800/1000",
-    alt: "Banke and Abel walking hand in hand",
-    category: "Engagement",
-    width: 800,
-    height: 1000,
-  },
-  {
-    id: "g10",
-    src: "https://picsum.photos/seed/bankeabel-g10/900/1200",
-    alt: "A quiet moment during their travels",
-    category: "Travel",
-    width: 900,
-    height: 1200,
-  },
-  {
-    id: "g11",
-    src: "https://picsum.photos/seed/bankeabel-g11/800/950",
-    alt: "Abel down on one knee",
-    category: "Proposal",
-    width: 800,
-    height: 950,
-  },
-  {
-    id: "g12",
-    src: "https://picsum.photos/seed/bankeabel-g12/900/700",
-    alt: "Extended family portrait",
-    category: "Family",
-    width: 900,
-    height: 700,
+    width: 810,
+    height: 1080,
   },
 ];
 
-export const ceremony: VenueDetail = {
-  heading: "Ceremony",
+export const event: VenueDetail = {
+  heading: "Wedding Reception",
   name: "Femi Gbajabiamila Hall",
-  date: "December 12, 2026",
-  time: "3:00 PM",
+  date: "September 26, 2026",
+  time: "11:00 AM",
   address: "Lagos State University (LASU), Badagry Expressway, Ojo, Lagos",
   dressCode: "Formal — White attire encouraged",
-  parking: "Free on-campus parking available near the hall entrance",
-  mapsUrl:
-    "https://maps.google.com/?q=Femi+Gbajabiamila+Hall+Lagos+State+University+Ojo+Lagos",
-};
-
-export const reception: VenueDetail = {
-  heading: "Reception",
-  name: "Femi Gbajabiamila Hall",
-  time: "5:00 PM",
-  address: "Lagos State University (LASU), Badagry Expressway, Ojo, Lagos",
   parking: "Free on-campus parking available near the hall entrance",
   mapsUrl:
     "https://maps.google.com/?q=Femi+Gbajabiamila+Hall+Lagos+State+University+Ojo+Lagos",
@@ -212,7 +163,7 @@ export const accommodation: AccommodationInfo = {
     },
   ],
   transportation: [
-    "Shuttle service will run between partner hotels and the venue from 2:00 PM",
+    "Shuttle service will run between partner hotels and the venue from 10:00 AM",
     "Ride-hailing apps (Uber/Bolt) are readily available throughout Lagos",
   ],
   airportInfo:
@@ -223,134 +174,80 @@ export const accommodation: AccommodationInfo = {
   ],
 };
 
+export const zoomMeeting: ZoomMeetingInfo = {
+  note: "Can't make it in person? Livestream details will be shared here closer to the wedding day — check back soon.",
+};
+
 export const weddingColors: WeddingColor[] = [
   { name: "White", hex: "#FFFFFF" },
-  // { name: "Sage Green", hex: "#9CAF88" },
-  // { name: "Gold", hex: "#C9A34E" },
-  // { name: "Ivory", hex: "#FFFEF6" },
 ];
 
 export const bridalParty: WeddingPartyMember[] = [
   {
     id: "bride",
-    name: "Adebanke Olatunde",
+    name: "Adebanke Abigail Olatunde",
     role: "Bride",
     message: "Finally marrying my best friend.",
-    image: "https://picsum.photos/seed/bankeabel-bride/600/700",
   },
-  {
-    id: "bm1",
-    name: "Adetola Olatunde",
-    role: "Bride's Maid",
-  },
-  {
-    id: "bm2",
-    name: "Fadeshayo Olatunde",
-    role: "Bride's Maid",
-  },
-  {
-    id: "bm3",
-    name: "Onyinye Olaitan",
-    role: "Bride's Maid",
-  },
-  {
-    id: "bm4",
-    name: "Eleana Oweazim",
-    role: "Bride's Maid",
-  },
-  {
-    id: "bm5",
-    name: "Sukanmi Ogunbode",
-    role: "Bride's Maid",
-  },
+  { id: "bm1", name: "Adetola Olatunde", role: "Bride's Maid" },
+  { id: "bm2", name: "Fadeshayo Olatunde", role: "Bride's Maid" },
+  { id: "bm3", name: "Onyinye Olaitan", role: "Bride's Maid" },
+  { id: "bm4", name: "Eleana Oweazim", role: "Bride's Maid" },
+  { id: "bm5", name: "Sukanmi Ogunbode", role: "Bride's Maid" },
 ];
 
 export const asoEbi: WeddingPartyMember[] = [
-  {
-    id: "ae1",
-    name: "Adesope Olatunde",
-    role: "Chief Bride's Maid",
-  },
-  {
-    id: "ae2",
-    name: "Adetutu Olatunde",
-    role: "Aso Ebi",
-  },
-  {
-    id: "ae3",
-    name: "Loveth Ativie",
-    role: "Aso Ebi",
-  },
-  {
-    id: "ae4",
-    name: "Ajovi Ighariemu",
-    role: "Aso Ebi",
-  },
-  {
-    id: "ae5",
-    name: "Eniola Orogbo",
-    role: "Aso Ebi",
-  },
-  {
-    id: "ae6",
-    name: "Funmi Olufisoye",
-    role: "Aso Ebi",
-  },
-  {
-    id: "ae7",
-    name: "Favor Oshadare",
-    role: "Aso Ebi",
-  },
-  {
-    id: "ae8",
-    name: "Ayomide Tella",
-    role: "Aso Ebi",
-  },
+  { id: "ae1", name: "Adesope Olatunde", role: "Chief Bride's Maid" },
+  { id: "ae2", name: "Adetutu Olatunde", role: "Aso Ebi" },
+  { id: "ae3", name: "Loveth Ativie", role: "Aso Ebi" },
+  { id: "ae4", name: "Ajovi Ighariemu", role: "Aso Ebi" },
+  { id: "ae5", name: "Eniola Orogbo", role: "Aso Ebi" },
+  { id: "ae6", name: "Funmi Olufisoye", role: "Aso Ebi" },
+  { id: "ae7", name: "Favor Oshadare", role: "Aso Ebi" },
+  { id: "ae8", name: "Ayomide Tella", role: "Aso Ebi" },
 ];
 
 export const groomParty: WeddingPartyMember[] = [
   {
     id: "groom",
-    name: "Abel Okafor",
+    name: "Abel Opeyemi Thomas",
     role: "Groom",
     message: "Every love story is beautiful, but ours is my favorite.",
-    image: "https://picsum.photos/seed/bankeabel-groom/600/700",
   },
-  {
-    id: "gm1",
-    name: "Godstime Oigiangbe",
-    role: "Best Man",
-  },
-  {
-    id: "gm2",
-    name: "Godspower Olaonipekun",
-    role: "Groomsman",
-  },
+  { id: "gm1", name: "Godstime Oigiangbe", role: "Groomsman" },
+  { id: "gm2", name: "Godspower Olaonipekun", role: "Groomsman" },
+  { id: "gm3", name: "Ayomide Deika", role: "Groomsman" },
+  { id: "gm4", name: "Gabriel Ukoh", role: "Groomsman" },
 ];
 
 export const schedule: ScheduleItem[] = [
   {
-    time: "12:00 PM",
+    time: "10:30 AM",
     title: "Guests Arrive",
-    description: "Please be seated by 12:30 PM",
+    description: "Please be seated by 10:45 AM",
   },
-  { time: "1:00 PM", title: "Ceremony Begins" },
+  { time: "11:00 AM", title: "Reception Begins" },
   {
-    time: "3:00 PM",
+    time: "12:30 PM",
     title: "Photography",
     description: "Family and wedding party portraits",
   },
+  { time: "1:00 PM", title: "Lunch & Cocktail Hour" },
   {
     time: "2:30 PM",
-    title: "Reception",
-    description: "The cocktail hour begins",
-  },
-  {
-    time: "4:00 PM",
     title: "Dance",
     description: "First dance followed by open floor",
   },
-  { time: "5:30 PM", title: "Farewell, but party continues" },
+  { time: "4:00 PM", title: "Farewell, but party continues" },
+];
+
+export const photoOrder: PhotoOrderItem[] = [
+  { order: 1, title: "Bride & Groom" },
+  { order: 2, title: "Immediate Families" },
+  { order: 3, title: "Groomsmen & Groom" },
+  { order: 4, title: "Bridal Train & Bride" },
+  { order: 5, title: "Extended Family" },
+  { order: 6, title: "Friends & Colleagues" },
 ];
 
 export const faqs: FaqItem[] = [
@@ -376,18 +273,25 @@ export const faqs: FaqItem[] = [
   {
     question: "What time should I arrive?",
     answer:
-      "Please arrive by 12:00 PM to be seated before the ceremony begins at 1:00 PM. Given Lagos traffic, we recommend leaving with plenty of buffer time.",
+      "Please arrive by 10:30 AM to be seated before the reception begins at 11:00 AM. Given Lagos traffic, we recommend leaving with plenty of buffer time.",
   },
 ];
 
-export const giftAccount: BankAccountInfo = {
-  bankName: "OPAY",
-  accountNumber: "9124951952",
-  accountName: "Abel Opeyemi Thomas",
-};
+export const giftAccounts: BankAccountInfo[] = [
+  {
+    bankName: "OPAY",
+    accountNumber: "9124951952",
+    accountName: "Abel Opeyemi Thomas",
+  },
+  {
+    bankName: "GTB",
+    accountNumber: "0520388324",
+    accountName: "Adebanke Olatunde Abigail",
+  },
+];
 
-export const contactInfo = {
-  plannerName: "Amara Events Co.",
-  plannerContact: "planner@bankeandabel.com",
-  phone: "+234 801 234 5678",
-};
+export const appreciation =
+  "Thank you for being part of our journey. Your presence, love, and support mean the world to us as we begin this new chapter together.";
+
+export const thankYouNote =
+  "To our family and friends — thank you for every prayer, every word of encouragement, and every way you've shown us love along the way. We are endlessly grateful to have you with us as we start our forever. With all our love, Banke & Abel.";

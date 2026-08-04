@@ -1,9 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
-import { navLinks } from "@/lib/data";
-import { scrollToId } from "@/lib/utils";
+import { navLinks, couple } from "@/lib/data";
 
 export function MobileDrawer({
   open,
@@ -24,7 +24,7 @@ export function MobileDrawer({
         >
           <div className="flex items-center justify-between px-6 py-6">
             <span className="font-serif text-2xl text-[color:var(--ink)]">
-              B &amp; A
+              {couple.hashtag}
             </span>
             <button
               type="button"
@@ -38,20 +38,20 @@ export function MobileDrawer({
 
           <nav className="flex flex-1 flex-col items-center justify-center gap-6">
             {navLinks.map((link, i) => (
-              <motion.button
+              <motion.div
                 key={link.href}
-                type="button"
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.08 * i, duration: 0.4 }}
-                onClick={() => {
-                  onClose();
-                  setTimeout(() => scrollToId(link.href), 200);
-                }}
-                className="font-serif text-3xl text-[color:var(--ink)] transition-colors hover:text-[color:var(--gold)]"
               >
-                {link.label}
-              </motion.button>
+                <Link
+                  href={link.href}
+                  onClick={onClose}
+                  className="font-serif text-3xl text-[color:var(--ink)] transition-colors hover:text-[color:var(--gold)]"
+                >
+                  {link.label}
+                </Link>
+              </motion.div>
             ))}
           </nav>
         </motion.div>

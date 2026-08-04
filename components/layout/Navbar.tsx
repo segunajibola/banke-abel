@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Menu, Moon, Sun, Volume2, VolumeX } from "lucide-react";
 import { navLinks, couple } from "@/lib/data";
-import { scrollToId, cn } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { useScrolled } from "@/hooks/useScrolled";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { useTheme } from "./ThemeProvider";
@@ -20,7 +22,16 @@ export function Navbar({
   const [drawerOpen, setDrawerOpen] = useState(false);
   const scrolled = useScrolled();
   const { theme, toggleTheme } = useTheme();
-  const activeHref = useActiveSection(navLinks.map((l) => l.href));
+  const pathname = usePathname();
+  const sectionIds = navLinks
+    .filter((link) => link.href.includes("#"))
+    .map((link) => `#${link.href.split("#")[1]}`);
+  const activeHash = useActiveSection(sectionIds);
+
+  const isLinkActive = (href: string) => {
+    const [path, hash] = href.split("#");
+    return hash ? activeHash === `#${hash}` : pathname === path;
+  };
 
   return (
     <>
@@ -34,37 +45,36 @@ export function Navbar({
         )}
       >
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 sm:px-8 lg:px-12">
-          <button
-            type="button"
-            onClick={() => scrollToId("#home")}
+          <Link
+            href="/"
             className="font-serif text-2xl tracking-wide text-[color:var(--ink)]"
             aria-label="Back to home"
           >
-            {couple.monogram}
-          </button>
+            {couple.hashtag}
+          </Link>
 
           <nav className="hidden items-center gap-7 lg:flex">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                type="button"
-                onClick={() => scrollToId(link.href)}
-                className={cn(
-                  "relative font-sans text-sm tracking-wide transition-colors hover:text-[color:var(--gold)]",
-                  activeHref === link.href
-                    ? "text-[color:var(--gold)]"
-                    : "text-[color:var(--ink)]",
-                )}
-              >
-                {link.label}
-                {activeHref === link.href && (
-                  <motion.span
-                    layoutId="nav-underline"
-                    className="absolute -bottom-1.5 left-0 h-px w-full bg-[color:var(--gold)]"
-                  />
-                )}
-              </button>
-            ))}
+            {navLinks.map((link) => {
+              const active = isLinkActive(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                    "relative font-sans text-sm tracking-wide transition-colors hover:text-[color:var(--gold)]",
+                    active ? "text-[color:var(--gold)]" : "text-[color:var(--ink)]",
+                  )}
+                >
+                  {link.label}
+                  {active && (
+                    <motion.span
+                      layoutId="nav-underline"
+                      className="absolute -bottom-1.5 left-0 h-px w-full bg-[color:var(--gold)]"
+                    />
+                  )}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-2">
