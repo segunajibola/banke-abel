@@ -23,7 +23,6 @@ export const couple = {
   weddingDateDisplay: "September 26, 2026",
   tagline: "Our Forever Begins",
   heroImage: "/images/couple-traditional-1.jpeg",
-  invitationBackground: "/images/invitation-bg.jpg",
 };
 
 export const navLinks = [
