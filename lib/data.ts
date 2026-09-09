@@ -57,7 +57,7 @@ export const loveStory: LoveStoryEvent[] = [
     title: "Wedding Reception",
     date: "September 26, 2026",
     description:
-      "The day their forever officially begins — surrounded by the family and friends who have loved and supported them since the very beginning..",
+      "The day their forever officially begins — surrounded by the family and friends who have loved and supported them since the very beginning.",
     image: "/images/wedding-welcome-card.jpeg",
   },
 ];
