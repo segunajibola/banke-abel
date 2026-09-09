@@ -5,10 +5,27 @@
 ▲ Next.js 16.2.12 (Turbopack)
 - Local:         http://localhost:3000
 - Network:       http://192.168.0.186:3000
-✓ Ready in 1768ms
+- Environments: .env.local
+✓ Ready in 1636ms
 
 ○ Compiling / ...
 ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
- GET / 200 in 4.3s (next.js: 3.1s, application-code: 1110ms)
- GET / 200 in 233ms (next.js: 45ms, application-code: 188ms)
+ GET / 200 in 11.3s (next.js: 3.3s, application-code: 8.0s)
+ GET / 200 in 156ms (next.js: 24ms, application-code: 132ms)
+RSVP sheet submission failed, trying email fallback: TypeError: fetch failed
+    at async POST (app\api\rsvp\route.ts:50:19)
+  48 |   if (webhookUrl) {
+  49 |     try {
+> 50 |       const res = await fetch(webhookUrl, {
+     |                   ^
+  51 |         method: "POST",
+  52 |         headers: { "Content-Type": "application/json" },
+  53 |         body: JSON.stringify(payload), {
+  [cause]: AggregateError: 
+      at ignore-listed frames {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+ POST /api/rsvp 502 in 1897ms (next.js: 1497ms, application-code: 400ms)
 [?25h

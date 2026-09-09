@@ -15,7 +15,7 @@ export function LoveStory() {
       <SectionHeading
         eyebrow="Our Story"
         title="A Love Written Slowly"
-        description="Every couple has a story. Here is a little of ours — from a chance meeting to the promise of forever."
+        description="Every couple has a story. Here is a little of ours — from casual friendship to being friends for life."
         className="mb-16 sm:mb-20"
       />
 

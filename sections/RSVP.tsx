@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import confetti from "canvas-confetti";
 import { CircleCheck, LoaderCircle } from "lucide-react";
 import type { RsvpFormData } from "@/types";
+import { rsvpContacts } from "@/lib/data";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
@@ -180,6 +181,22 @@ export function RSVP() {
             )}
           </AnimatePresence>
         </Card>
+
+        <p className="mt-6 text-center font-sans text-sm text-[color:var(--ink-muted)]">
+          Having trouble RSVPing? Call{" "}
+          {rsvpContacts.map((contact, index) => (
+            <span key={contact.phone}>
+              {index > 0 && " or "}
+              <a
+                href={`tel:${contact.phone}`}
+                className="font-medium text-[color:var(--gold)] underline-offset-4 hover:underline"
+              >
+                {contact.name} ({contact.phone})
+              </a>
+            </span>
+          ))}
+          .
+        </p>
       </Reveal>
     </Section>
   );

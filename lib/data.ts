@@ -41,15 +41,15 @@ export const loveStory: LoveStoryEvent[] = [
     title: "First Date",
     date: "August 2019",
     description:
-      "Their first official date was a quiet evening spent talking for hours. Abel was so nervous he arrived thirty minutes early — Banke still teases him about it.",
+      "Their first date was a quiet and beautiful evening spent under the twilight at a water park, reminiscing about the beginning of their intentional love story. Banke kept asking questions about the months leading up to Abel's request to date her, and Abel carefully explained it all in detail as the sun went down.",
     image: "/images/couple-candid-1.jpeg",
   },
   {
     id: "engagement",
     title: "Engagement",
-    date: "March 2025",
+    date: "July 24, 2026",
     description:
-      "Abel got down on one knee, and Banke said yes before he even finished the question. Friends and family gathered to celebrate the promise of forever.",
+      "After 526 days of choosing to love each other, on July 24, 2026 — which symbolized 24/7 — Abel got down on one knee and cheerfully asked Bam Bam, as he usually calls her, to be his 24/7, his unending forever. She excitedly said the easiest and best YES of her life. Friends and family gathered to celebrate their beginning to forever.",
     image: "/images/couple-proposal.jpeg",
   },
   {
@@ -186,7 +186,8 @@ export const bridalParty: WeddingPartyMember[] = [
     id: "bride",
     name: "Adebanke Abigail Olatunde",
     role: "Bride",
-    message: "Finally marrying my best friend.",
+    message:
+      "Abel's humility, kindness and love for Jehovah drew me to him. I love and admire his love and commitment to me. In fact, he is my Heart's Friend — Ore ọkàn mi — because my heart has taken him as its owner forever, even till God's Kingdom.",
   },
   { id: "bm1", name: "Adetola Olatunde", role: "Bride's Maid" },
   { id: "bm2", name: "Fadeshayo Olatunde", role: "Bride's Maid" },
@@ -287,6 +288,11 @@ export const giftAccounts: BankAccountInfo[] = [
     accountNumber: "0520388324",
     accountName: "Adebanke Olatunde Abigail",
   },
+];
+
+export const rsvpContacts = [
+  { name: "Segun", phone: "08105729893" },
+  { name: "Demi", phone: "08131817626" },
 ];
 
 export const appreciation =
