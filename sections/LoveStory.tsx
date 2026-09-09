@@ -61,11 +61,14 @@ export function LoveStory() {
                   </div>
                 </Reveal>
 
-                <Reveal delay={0.1} className={cn(isEven ? "md:pl-12" : "md:pr-12")}>
+                <Reveal
+                  delay={0.1}
+                  className={cn(isEven ? "md:pl-12" : "md:pr-12")}
+                >
                   <span className="font-sans text-xs font-medium uppercase tracking-[0.25em] text-[color:var(--gold)]">
                     {event.date}
                   </span>
-                  <h3 className="mt-3 font-serif text-3xl text-[color:var(--ink)] sm:text-4xl">
+                  <h3 className="mt-3 font-serif text-3xl  text-[color:var(--ink)] sm:text-4xl">
                     {event.title}
                   </h3>
                   <p className="mt-4 font-sans text-base leading-relaxed text-[color:var(--ink-muted)]">
